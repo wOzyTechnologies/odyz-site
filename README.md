@@ -34,6 +34,13 @@ GitHub Pages publishes the `docs/` folder of the `main` branch to
 https://www.odyz.app/ (Settings → Pages → Deploy from a branch → `main` / `/docs`).
 Edit, push to `main`, and the site updates a minute later.
 
+GitHub Pages lets browsers cache every file for 10 minutes, so a visitor can
+end up with a new page and an old image or stylesheet. To avoid that, the
+stylesheet, the script and any image that has been replaced under the same
+name are linked with a `?v=` tag (the first 8 characters of the file's MD5).
+When you change one of those files, update its tag, for example
+`md5sum docs/styles.css | cut -c1-8`. A new file with a new name doesn't need one.
+
 ```
 odyz-site/
 ├── docs/          the published site (everything in here is public at odyz.app)
