@@ -8,7 +8,8 @@ Builds the site's assets/ folder from the master files in
 What it does:
   * re-encodes the app screenshots as WebP (they arrive as 2-3 MB PNGs)
   * shows the 3D-map screenshots through the screen of handphone.png
-  * copies the stamps, avatars, logo, favicon and QR code into place
+  * copies the stamps, avatars, logo and favicon into place
+  * generates the App Store QR code
   * crops the flag strip out of the passport screenshot
   * renders a 1200x630 og-image.png for social previews
 
@@ -18,6 +19,7 @@ Re-run it any time you update a source file.
 import os
 import sys
 import numpy as np
+import segno
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 # The published site lives in ../docs.
@@ -27,6 +29,9 @@ OUT = os.path.join(SITE, "assets")
 
 ACCENT = "#bb73ff"
 BG = "#121212"
+
+
+APP_STORE_QR_URL = "https://apps.apple.com/app/odyz/id6736624376"
 
 
 def src(rel):
@@ -105,14 +110,11 @@ def main():
     logo = Image.open(src("OdyzCentered.png")).convert("RGBA")
     logo.resize((450, 450), Image.LANCZOS).save(out("logo-stamp.png"), optimize=True)
     Image.open(src("favicon.png")).save(out("favicon.png"), optimize=True)
-    # The master QR is white modules on transparent (made for a dark background).
     # Flatten it to black-on-white so it scans reliably wherever it lands.
-    qr = Image.open(src("QRCode.png")).convert("RGBA")
-    qr_arr = np.array(qr)
-    modules = qr_arr[..., 3] > 128
-    flat = np.full(qr_arr.shape[:2] + (3,), 255, dtype=np.uint8)
-    flat[modules] = 0
-    Image.fromarray(flat).save(out("qr-appstore.png"), optimize=True)
+    # Generated here rather than copied from QRCode.png, which pointed at the
+    # retired appstore.com/odyz short link. No country in the URL, so the App
+    # Store opens Odyz in the scanner's own storefront.
+    segno.make(APP_STORE_QR_URL, error="m").save(out("qr-appstore.png"), scale=12, border=3, dark="#000", light="#fff")
     for i in (1, 2, 3):
         Image.open(src(f"Testimonials/Avatar{i}.png")).save(out(f"avatars/avatar-{i}.png"), optimize=True)
     print("  logo, favicon, QR, 3 avatars")
