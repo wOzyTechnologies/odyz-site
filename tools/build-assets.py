@@ -7,8 +7,7 @@ Builds the site's assets/ folder from the master files in
 
 What it does:
   * re-encodes the app screenshots as WebP (they arrive as 2-3 MB PNGs)
-  * composites the 3D-map screenshots into handphone.png, matching the
-    perspective of the phone in the hand
+  * shows the 3D-map screenshots through the screen of handphone.png
   * copies the stamps, avatars, logo, favicon and QR code into place
   * crops the flag strip out of the passport screenshot
   * renders a 1200x630 og-image.png for social previews
@@ -19,15 +18,12 @@ Re-run it any time you update a source file.
 import os
 import sys
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 # The published site lives in ../docs.
 SITE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs")
 SRC = sys.argv[1] if len(sys.argv) > 1 else "/mnt/user-data/uploads/Odyz Assets--Website"
 OUT = os.path.join(SITE, "assets")
-
-# Screen of the phone inside handphone.png, as a quad (measured from the image).
-HAND_QUAD = [(135, 29), (520, 28), (528, 915), (133, 917)]
 
 ACCENT = "#bb73ff"
 BG = "#121212"
@@ -51,48 +47,39 @@ def save_webp(im, rel, quality=86, max_w=None):
     print(f"  {rel}  {im.width}x{im.height}  {os.path.getsize(out(rel))//1024} KB")
 
 
-def perspective_coeffs(dst, src_pts):
-    """Coefficients mapping dst -> src, as PIL.Image.transform(PERSPECTIVE) wants."""
-    matrix = []
-    for (x, y), (u, v) in zip(dst, src_pts):
-        matrix.append([x, y, 1, 0, 0, 0, -u * x, -u * y])
-        matrix.append([0, 0, 0, x, y, 1, -v * x, -v * y])
-    A = np.array(matrix, dtype=float)
-    B = np.array(src_pts, dtype=float).reshape(8)
-    return np.linalg.solve(A, B)
-
-
 def hand_composite(screenshot_path, rel_out):
-    """Drop a screenshot into the phone the hand is holding."""
+    """Show a screenshot through the screen of the phone the hand is holding.
+
+    handphone.png has a transparent screen, so the screenshot goes underneath
+    it: find the see-through area connected to the middle of the screen, cover
+    it (plus a 2px overlap so no seam shows at the bezel's soft edge), then lay
+    the hand, bezel and Dynamic Island back on top.
+    """
     hand = Image.open(src("Content/handphone.png")).convert("RGBA")
-    shot = Image.open(screenshot_path).convert("RGBA")
+    a = np.array(hand)[..., 3]
+    m = Image.fromarray(np.where(a < 250, 0, 255).astype(np.uint8)).copy()   # copy: floodfill needs its own pixels
+    seed = (hand.width * 33 // 100, hand.height * 40 // 100)   # middle of the screen
+    ImageDraw.floodfill(m, seed, 128)
+    hole = np.array(m) == 128
+    ys, xs = np.where(hole)
+    x0, y0, x1, y1 = xs.min() - 2, ys.min() - 2, xs.max() + 3, ys.max() + 3
+    mask = Image.fromarray((hole * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(5))
 
-    w, h = hand.size
-    dst = HAND_QUAD
-    src_pts = [(0, 0), (shot.width, 0), (shot.width, shot.height), (0, shot.height)]
-    coeffs = perspective_coeffs(dst, src_pts)
+    shot = Image.open(screenshot_path).convert("RGBA").resize((x1 - x0, y1 - y0), Image.LANCZOS)
+    layer = Image.new("RGBA", hand.size, (0, 0, 0, 0))
+    layer.paste(shot, (x0, y0))
+    canvas = Image.new("RGBA", hand.size, (0, 0, 0, 0))
+    canvas.paste(layer, (0, 0), mask)
+    canvas.alpha_composite(hand)
 
-    warped = shot.transform((w, h), Image.PERSPECTIVE, coeffs, Image.BICUBIC)
-
-    # Mask: the screen quad with rounded corners.
-    mask = Image.new("L", (w, h), 0)
-    ImageDraw.Draw(mask).polygon(dst, fill=255)
-    rounded = Image.new("L", (w, h), 0)
-    x0 = min(p[0] for p in dst); x1 = max(p[0] for p in dst)
-    y0 = min(p[1] for p in dst); y1 = max(p[1] for p in dst)
-    ImageDraw.Draw(rounded).rounded_rectangle([x0, y0, x1, y1], radius=42, fill=255)
-    mask = Image.fromarray(np.minimum(np.array(mask), np.array(rounded)))
-
-    hand.paste(warped, (0, 0), mask)
-    hand = hand.resize((744, 1008), Image.LANCZOS)          # 0.8x is plenty at display size
-    hand.save(out(rel_out), "WEBP", quality=88, method=6)   # WebP keeps the alpha channel
-    print(f"  {rel_out}  {hand.width}x{hand.height}  {os.path.getsize(out(rel_out))//1024} KB")
+    canvas = canvas.resize((744, 1008), Image.LANCZOS)          # 0.8x is plenty at display size
+    canvas.save(out(rel_out), "WEBP", quality=88, method=6)     # WebP keeps the alpha channel
+    print(f"  {rel_out}  {canvas.width}x{canvas.height}  {os.path.getsize(out(rel_out))//1024} KB")
 
 
 def main():
     print("Screens ->")
     screens = {
-        # hero shelf, left to right
         # feature cards
         "screens/passport-light-2.webp": "Content/Pass/IMG_1063.PNG",
         "screens/passport-dark-1.webp": "Content/Pass/IMG_1064.PNG",
@@ -102,10 +89,10 @@ def main():
     for rel, source in screens.items():
         save_webp(Image.open(src(source)), rel, quality=86, max_w=468)
 
-    print("3D map, composited into the hand ->")
-    hand_composite(src("Content/IMG_1044.PNG"), "screens/story-1.webp")  # relive in 3D
-    hand_composite(src("Content/IMG_1043.PNG"), "screens/story-2.webp")  # right where it happened
-    hand_composite(src("Content/IMG_1047.PNG"), "screens/story-3.webp")  # global adventures
+    print("3D map, shown in the hand ->")
+    hand_composite(src("Content/IMG_1044.PNG"), "screens/story-eiffel.webp")  # relive in 3D
+    hand_composite(src("Content/IMG_1043.PNG"), "screens/story-louvre.webp")  # right where it happened
+    hand_composite(src("Content/IMG_1047.PNG"), "screens/story-pier39.webp")  # global adventures
 
     print("Stamps ->")
     for name in ["agra", "berlin", "buenosaires", "cairo", "dubai", "istanbul",
