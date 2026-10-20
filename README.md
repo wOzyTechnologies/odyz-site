@@ -64,7 +64,7 @@ any background, and renders the 1200×630 social image.
 
 | Slot | Source |
 |---|---|
-| Hero phones, left → right | `IMG_0490`, `Timeline.jpeg`, the world-map screen (`screens/hero-feature.webp`) over a blurred copy of its starry backdrop (`screens/hero-feature-glow.webp`), both added by hand, not by the builder, `IMG_0492`, `IMG_0494` |
+| Hero phones, left → right | `IMG_0490`, `Timeline.jpeg`, the World Trips screen in a phone bezel (`screens/hero-feature.webp`) with the map carrying on behind it (`screens/hero-feature-map.webp`, three screenshots stitched side by side), both added by hand, not by the builder, `IMG_0492`, `IMG_0494` |
 | 3D map — "relive your trips" | `IMG_1044` (Eiffel Tower) in `handphone.png` |
 | 3D map — "right where it happened" | `IMG_1043` (Mona Lisa, the Louvre) |
 | 3D map — "global adventures" | `IMG_1047` (San Francisco) |
