@@ -92,7 +92,7 @@ The four questions are the real ones from your site; the **answers are my drafts
 
 ### 2. Privacy + Terms
 The real text (last updated May 2026) is in `privacy/index.html` and `terms/index.html`.
-Section 12 of the terms still says `[California/United States]` — pick one.
+Terms are governed by the laws of the State of California, United States.
 
 ### 3. Links to check
 - Support — the "Contact us" button, the footer and both legal pages go to the
