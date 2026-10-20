@@ -6,6 +6,7 @@ step, no framework, no dependencies. Drop the folder on any static host and it w
 ```
 docs/
 ├── index.html              the whole landing page
+├── press/                  press kit: page, fact sheet, downloadable files and ZIP
 ├── privacy/index.html      legal shell — paste your real policy in
 ├── terms/index.html        legal shell — paste your real terms in
 ├── 404.html
@@ -51,6 +52,28 @@ odyz-site/
 
 The privacy policy and terms live at `/privacy/` and `/terms/`; the old
 `privacy.html` and `terms.html` addresses redirect there.
+
+## Press kit
+
+`/press/` follows the same layout as the Animal Loop and TicToe Fury kits on
+wozy.co: fact sheet, descriptions, key facts, press coverage, screenshots, live
+experience photos (an iPhone in a real hand), stamps, icon, logo, key art and
+the press contact (the wOzy contact form with `type=press`). Everything on the page is also in `press/odyz-press-kit.zip`.
+
+The downloadable files in `press/files/` are generated from `assets/`, except the
+fact sheet (`press/files/odyz-fact-sheet.txt`), which is written by hand. After
+changing a screenshot, a stamp or the fact sheet, rebuild the files and the ZIP:
+
+```bash
+python3 tools/build-press-kit.py
+# needs: pip install pillow
+```
+
+If the ZIP's size changes, update the "ZIP · 4.2 MB" label in `press/index.html`.
+The screenshots are only as large as the site's copies (468–540 px wide); to ship
+full-resolution ones, list the master PNGs in `SCREENSHOT_OVERRIDES` at the top of
+the script and re-run it. The app icon (`assets/app-icon.png`) is the 256 px copy
+from wozy.co.
 
 ## Rebuilding the assets
 
