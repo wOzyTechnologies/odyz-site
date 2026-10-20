@@ -502,6 +502,7 @@ em { font-style: normal; color: var(--accent); }
 }
 .acc-item[open] .acc-icon { transform: rotate(-135deg) translate(-3px, -3px); }
 .acc-body { padding: 0 4px 28px; max-width: 72ch; color: var(--text-muted); font-size: 16px; }
+.acc-body p + p { margin-top: 1em; }
 
 .faq-cta { margin-top: 44px; }
 

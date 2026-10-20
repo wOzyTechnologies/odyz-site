@@ -117,9 +117,9 @@ To reassign a slot, change the mapping in `tools/build-assets.py` and re-run it.
 ## What still needs your input
 
 ### 1. FAQ answers
-The four questions are the real ones from your site; the **answers are my drafts**
-(the live accordion wouldn't open for scraping). Search `index.html` for
-`TODO Sebastian` and paste your actual copy.
+The four questions and answers are the copy from the live site. The FAQ is also
+in the page's structured data (the `FAQPage` block in the `<head>` of
+`index.html`), so when you change an answer, change it in both places.
 
 ### 2. Privacy + Terms
 The real text (last updated May 2026) is in `privacy/index.html` and `terms/index.html`.
