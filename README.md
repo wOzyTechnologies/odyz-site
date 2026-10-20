@@ -74,12 +74,12 @@ any background, and renders the 1200×630 social image.
 | Worldwide card | flag row cropped out of `IMG_0490` |
 | Stamps marquee | all 12 of `Stamps/*.png` |
 | Testimonials | `Testimonials/Avatar1–3.png` |
-| Download card | `QRCode.png` + `IMG_0506` (world trips globe) |
+| Download card | `QRCode.png` + an iPad screenshot (`screens/download-ipad.webp`, added by hand, not by the builder) |
 | Logo, favicon | `OdyzCentered.png`, `favicon.png` |
 
 To reassign a slot, change the mapping in `tools/build-assets.py` and re-run it.
 
-**Unused from your folder:** `IMG_0493`, `IMG_0506` (except the download card),
+**Unused from your folder:** `IMG_0493`, `IMG_0506`,
 `IMG_1045`, `IMG_1046`, `Background Stamps.png`, `Preview/*`, `world.png`,
 `phone.avif` and the `.afphoto` originals.
 
