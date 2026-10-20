@@ -252,20 +252,18 @@ em { font-style: normal; color: var(--accent); }
 .phone--lg { width: clamp(125px, 16.5vw, 240px); }
 .hero-shelf .phone { z-index: 1; }
 
-/* Centre of the shelf: a phone already framed on its starry map backdrop.
-   The phone fills the middle 70% of the image, so the image is sized to make
-   the phone ~1.4x a large shelf phone, and the backdrop tucks behind the
-   neighbours and fades out at the edges. */
-.hero-feature {
-  --w: clamp(180px, 24vw, 350px);
-  flex: 0 0 auto; position: relative; width: var(--w);
-  margin: 0 calc(var(--w) * -0.11) calc(var(--w) * -0.1);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(180deg, transparent, #000 8%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(180deg, transparent, #000 8%);
-  mask-composite: intersect;
+/* Centre of the shelf: the world-map phone sits on a soft, blurred copy of
+   its starry map backdrop. The backdrop is lined up so the phone in it sits
+   right behind the real phone (the screen fills x 18-82%, y 6-92% of it) and
+   fades out in an oval, so it glows behind the neighbouring phones. */
+.hero-feature { position: relative; z-index: 0; flex: 0 0 auto; }
+.hero-feature::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  left: -28.7%; top: -6.5%; width: 157.7%; height: 115.6%;
+  background: url("assets/screens/hero-feature-glow.webp") center / 100% 100% no-repeat;
+  -webkit-mask-image: radial-gradient(closest-side, #000 50%, transparent);
+  mask-image: radial-gradient(closest-side, #000 50%, transparent);
 }
-.hero-feature img { width: 100%; }
 
 /* Shared phone chrome */
 .phone {
