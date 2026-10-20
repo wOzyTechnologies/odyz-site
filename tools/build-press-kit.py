@@ -44,9 +44,9 @@ SCREENSHOTS = [
 SCREENSHOT_OVERRIDES = {}
 
 MAP_3D = [
-    ("odyz-3d-map-eiffel-tower.png", "screens/story-1.webp"),
-    ("odyz-3d-map-louvre.png", "screens/story-2.webp"),
-    ("odyz-3d-map-san-francisco.png", "screens/story-3.webp"),
+    ("odyz-3d-map-eiffel-tower.png", "screens/story-eiffel.webp"),
+    ("odyz-3d-map-louvre.png", "screens/story-louvre.webp"),
+    ("odyz-3d-map-pier-39.png", "screens/story-pier39.webp"),
 ]
 
 STAMPS = ["agra", "berlin", "buenosaires", "cairo", "dubai", "istanbul",
