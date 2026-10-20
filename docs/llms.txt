@@ -1,0 +1,35 @@
+# Odyz
+
+> Odyz is a privacy-first travel tracker for iPhone and iPad, made by wOzy. It turns the photos already on your phone into trips, a 3D map and a digital passport of every country and city you've been to, and collects a landmark stamp for every place you visit. No account is needed, and your travel history is processed on your device. Free to download.
+
+- App Store: https://apps.apple.com/us/app/odyz/id6736624376
+- Made by [wOzy](https://www.wozy.co/), a small independent studio making iPhone and iPad apps since 2010
+
+## Features
+
+- Trips, maps and stats built automatically from the location and date in your photos; no check-ins
+- Digital passport: continents, countries and cities visited, share of the world explored, trips, days traveling, photos and distance traveled, in light and dark modes
+- Compare passports with friends
+- 3D map with your photos pinned where they were taken, inside landmarks or out on the street
+- Travel timeline organized by year, and a world map with a pin for every place you've been
+- All 193 UN countries plus many more territories
+- Collectible landmark stamps for the places you visit
+
+## Pages
+
+- [Odyz](https://www.odyz.app/): Product page with features, reviews and FAQ
+- [Press kit](https://www.odyz.app/press/): Fact sheet, descriptions, screenshots, phone-in-hand renders, stamps, icon, logo and key art. Downloadable ZIP: https://www.odyz.app/press/odyz-press-kit.zip
+- [Fact sheet (plain text)](https://www.odyz.app/press/files/odyz-fact-sheet.txt)
+
+## Press coverage
+
+- "Odyz Turns Your Travel Photos Into A Visual Passport To Enjoy", Brent Dirks, App Advice
+
+## Contact
+
+- [Support and press contact](https://www.wozy.co/contact/?app=odyz): Contact form for support, bug reports, feature requests and press
+
+## Optional
+
+- [Privacy policy](https://www.odyz.app/privacy/)
+- [Terms and conditions](https://www.odyz.app/terms/)
