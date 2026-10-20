@@ -5,7 +5,8 @@ Builds the press kit at docs/press/ from the site's own assets.
     python3 tools/build-press-kit.py
 
 What it does:
-  * exports the app screenshots as JPG and the 3D-map renders as PNG
+  * exports the app screenshots as JPG and the live-experience photos (an iPhone in
+    a real hand) as PNG
   * exports the app icon, the logo stamp and the 12 city stamps as PNG
   * turns og-image.png into the 1200x630 key art
   * zips everything in docs/press/files/, including the hand-written
@@ -43,10 +44,10 @@ SCREENSHOTS = [
 # Published name -> full-resolution master, used instead of the site asset when set.
 SCREENSHOT_OVERRIDES = {}
 
-MAP_3D = [
-    ("odyz-3d-map-eiffel-tower.png", "screens/story-eiffel.webp"),
-    ("odyz-3d-map-louvre.png", "screens/story-louvre.webp"),
-    ("odyz-3d-map-pier-39.png", "screens/story-pier39.webp"),
+LIVE = [
+    ("odyz-live-eiffel-tower.png", "screens/story-eiffel.webp"),
+    ("odyz-live-louvre.png", "screens/story-louvre.webp"),
+    ("odyz-live-pier-39.png", "screens/story-pier39.webp"),
 ]
 
 STAMPS = ["agra", "berlin", "buenosaires", "cairo", "dubai", "istanbul",
@@ -85,9 +86,9 @@ def build_files():
     for name, asset in SCREENSHOTS:
         save_jpg(SCREENSHOT_OVERRIDES.get(name, os.path.join(ASSETS, asset)), f"screenshots/{name}")
 
-    print("3d-map/")
-    for name, asset in MAP_3D:
-        save_png(os.path.join(ASSETS, asset), f"3d-map/{name}")
+    print("live/")
+    for name, asset in LIVE:
+        save_png(os.path.join(ASSETS, asset), f"live/{name}")
 
     print("stamps/")
     for city in STAMPS:

@@ -64,7 +64,7 @@ ASSETS IN THIS KIT
 - icon/: app icon, PNG
 - logo/: the Odyz stamp logo, transparent PNG
 - screenshots/: 7 iPhone screenshots and 1 iPad screenshot, JPG
-- 3d-map/: 3 renders of the 3D map on an iPhone in hand, transparent PNG
+- live/: 3 photos of Odyz on an iPhone in a real hand, transparent PNG
 - stamps/: 12 city stamps, transparent PNG
 - odyz-key-art-1200x630.jpg
 

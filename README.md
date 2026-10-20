@@ -56,9 +56,9 @@ The privacy policy and terms live at `/privacy/` and `/terms/`; the old
 ## Press kit
 
 `/press/` follows the same layout as the Animal Loop and TicToe Fury kits on
-wozy.co: fact sheet, descriptions, key facts, press coverage, screenshots, 3D-map
-renders, stamps, icon, logo, key art and the press contact (the wOzy contact form
-with `type=press`). Everything on the page is also in `press/odyz-press-kit.zip`.
+wozy.co: fact sheet, descriptions, key facts, press coverage, screenshots, live
+experience photos (an iPhone in a real hand), stamps, icon, logo, key art and
+the press contact (the wOzy contact form with `type=press`). Everything on the page is also in `press/odyz-press-kit.zip`.
 
 The downloadable files in `press/files/` are generated from `assets/`, except the
 fact sheet (`press/files/odyz-fact-sheet.txt`), which is written by hand. After
