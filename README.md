@@ -91,8 +91,8 @@ The four questions are the real ones from your site; the **answers are my drafts
 `TODO Sebastian` and paste your actual copy.
 
 ### 2. Privacy + Terms
-Both pages are styled shells with `TODO Sebastian` markers. Paste your existing
-legal text in — your App Store listing links to these, so they matter.
+The real text (last updated May 2026) is in `privacy/index.html` and `terms/index.html`.
+Section 12 of the terms still says `[California/United States]` — pick one.
 
 ### 3. Links to check
 - Support — the "Contact us" button, the footer and both legal pages go to the

@@ -525,6 +525,9 @@ em { font-style: normal; color: var(--accent); }
 .legal .updated { color: var(--text-faint); font-size: 14px; margin-bottom: 48px; }
 .legal-body { max-width: 74ch; color: var(--text-muted); font-size: 16px; }
 .legal-body h2 { font-size: 22px; font-weight: 700; color: var(--text); margin: 40px 0 12px; letter-spacing: -0.4px; }
+.legal-body h3 { font-size: 17px; font-weight: 700; color: var(--text); margin: 24px 0 8px; }
 .legal-body p, .legal-body li { margin-bottom: 12px; line-height: 1.75; }
 .legal-body ul { list-style: disc; padding-left: 22px; }
+.legal-body ol { list-style: decimal; padding-left: 22px; }
+.legal-body li > ul { margin-top: 12px; list-style: circle; }
 .legal-body a { color: var(--accent); }
