@@ -98,10 +98,8 @@ def main():
         "screens/hero-4.webp": "Content/IMG_0492.PNG",       # landmarks visited
         "screens/hero-5.webp": "Content/IMG_0494.PNG",       # glowing pins over Europe
         # feature cards
-        "screens/passport-light-1.webp": "Content/Pass/IMG_1061.PNG",
         "screens/passport-light-2.webp": "Content/Pass/IMG_1063.PNG",
         "screens/passport-dark-1.webp": "Content/Pass/IMG_1064.PNG",
-        "screens/passport-dark-2.webp": "Content/IMG_0490.PNG",
         "screens/timeline.webp": "Content/Screenshot 2026-10-19 at 6.39.40 PM.png",
         "screens/worldmap.webp": "Content/IMG_0524.PNG",
     }

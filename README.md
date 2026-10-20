@@ -68,7 +68,7 @@ any background, and renders the 1200×630 social image.
 | 3D map — "relive your trips" | `IMG_1044` (Eiffel Tower) in `handphone.png` |
 | 3D map — "right where it happened" | `IMG_1043` (Mona Lisa, the Louvre) |
 | 3D map — "global adventures" | `IMG_1047` (San Francisco) |
-| Passport card | `Pass/IMG_1061`, `Pass/IMG_1063` (light), `Pass/IMG_1064`, `IMG_0490` (dark) |
+| Passport card | friends comparison (`screens/passport-compare.webp`, added by hand, not by the builder), `Pass/IMG_1063` (light), `Pass/IMG_1064` (dark) |
 | Travel timeline card | `Screenshot 2026-10-19 at 6.39.40 PM` |
 | World map card | `IMG_0524` (pins over the San Francisco Bay Area) |
 | Worldwide card | flag row cropped out of `IMG_0490` |
