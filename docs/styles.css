@@ -144,6 +144,21 @@ em { font-style: normal; color: var(--accent); }
   display: inline-flex; align-items: center; gap: 9px;
   font-weight: 700; font-size: 17px; letter-spacing: -0.5px; color: var(--accent);
 }
+/* wOzy home link, matching the header on every wozy.co app page */
+.wz-crumb { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.wz-home {
+  display: inline-flex; align-items: center; gap: 7px; flex: none;
+  margin-left: -6px; padding: 4px 8px 4px 4px; border-radius: 10px;
+  color: #F6B25A; font-family: "Bricolage Grotesque", var(--font);
+  font-size: 18px; font-weight: 500; letter-spacing: -0.3px; line-height: 1;
+  transition: background .15s;
+}
+.wz-home:hover { background: rgba(255, 255, 255, 0.08); }
+.wz-home:focus-visible { outline: 2px solid #F39A1E; outline-offset: 2px; }
+.wz-home img { width: 24px; height: 24px; }
+.wz-sep { flex: none; width: 1.5px; height: 20px; border-radius: 1px; background: rgba(255, 255, 255, 0.22); }
+.wz-crumb .nav-brand { white-space: nowrap; }
+
 .nav-links { display: flex; align-items: center; gap: 6px; }
 .nav-links a {
   display: block; padding: 8px 15px; border-radius: 999px;
@@ -187,6 +202,11 @@ em { font-style: normal; color: var(--accent); }
     background: var(--accent); color: #12061f; font-weight: 700;
   }
   .nav-links-cta a:hover { color: #12061f; }
+}
+@media (max-width: 560px) {
+  .wz-crumb { gap: 10px; }
+  .wz-home { padding: 4px; }
+  .wz-home span { display: none; }
 }
 
 /* ==========================================================================

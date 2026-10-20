@@ -95,7 +95,8 @@ Both pages are styled shells with `TODO Sebastian` markers. Paste your existing
 legal text in — your App Store listing links to these, so they matter.
 
 ### 3. Links to check
-- `hello@odyz.app` — used by the "Contact us" button and both legal pages
+- Support — the "Contact us" button, the footer and both legal pages go to the
+  shared wOzy contact form (`https://www.wozy.co/contact/?app=odyz`), like the other app sites
 - `https://x.com/odyzapp` — footer social link, guessed from the original
 - Canonical URLs in `index.html` and `sitemap.xml` if you host on a different domain
 - The App Advice logo isn't in your assets folder, so the press quote runs without
