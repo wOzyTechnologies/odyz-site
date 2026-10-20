@@ -3,6 +3,7 @@
 > Odyz is a privacy-first travel tracker for iPhone and iPad, made by wOzy. It turns the photos already on your phone into trips, a 3D map and a digital passport of every country and city you've been to, and collects a landmark stamp for every place you visit. No account is needed, and your travel history is processed on your device. Free to download.
 
 - App Store: https://apps.apple.com/us/app/odyz/id6736624376
+- X: https://x.com/odyzapp
 - Made by [wOzy](https://www.wozy.co/), a small independent studio making iPhone and iPad apps since 2010
 
 ## Features

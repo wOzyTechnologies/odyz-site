@@ -128,7 +128,7 @@ Terms are governed by the laws of the State of California, United States.
 ### 3. Links to check
 - Support — the "Contact us" button, the footer and both legal pages go to the
   shared wOzy contact form (`https://www.wozy.co/contact/?app=odyz`), like the other app sites
-- The footer X link points to wOzy's account, `https://x.com/wozyofficial`
+- The footer X link points to Odyz's account, `https://x.com/odyzapp`
 - Canonical URLs in `index.html` and `sitemap.xml` if you host on a different domain
 - The App Advice logo isn't in your assets folder, so the press quote runs without
   it (accent rule on the left instead). Drop the file in and add it back if you want.
