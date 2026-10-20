@@ -85,8 +85,9 @@ python3 tools/build-assets.py "/path/to/Odyz Assets/Website"
 # needs: pip install pillow numpy scipy
 ```
 
-It re-encodes the 2–3 MB screenshot PNGs as WebP (72 KB and under), composites the
-3D-map screenshots into `handphone.png` with the right perspective, keys the purple
+It re-encodes the 2–3 MB screenshot PNGs as WebP (72 KB and under), shows the
+3D-map screenshots through the transparent screen of `handphone.png` (under its
+bezel and Dynamic Island), keys the purple
 background out of the flag strip, flattens the QR to black-on-white so it scans on
 any background, and renders the 1200×630 social image.
 
@@ -96,8 +97,8 @@ any background, and renders the 1200×630 social image.
 |---|---|
 | Hero phones, left → right | all added by hand, not by the builder: `screens/shelf-bay-area.webp`, `screens/shelf-compare.webp`, the World Trips screen (`screens/hero-feature.webp`) with the map carrying on behind it (`screens/hero-feature-map.webp`, three screenshots stitched side by side), `screens/shelf-uganda.webp`, `screens/shelf-timeline.webp` |
 | 3D map — "relive your trips" | `IMG_1044` (Eiffel Tower) in `handphone.png` |
-| 3D map — "right where it happened" | `IMG_1043` (Mona Lisa, the Louvre) |
-| 3D map — "global adventures" | `IMG_1047` (San Francisco) |
+| 3D map — "right where it happened" | `IMG_1043` (Mona Lisa, the Louvre) in `handphone.png` |
+| 3D map — "global adventures" | `IMG_1047` (Pier 39, San Francisco) in `handphone.png` |
 | Passport card | friends comparison (`screens/passport-compare.webp`, added by hand, not by the builder), `Pass/IMG_1063` (light), `Pass/IMG_1064` (dark) |
 | Travel timeline card | `Screenshot 2026-10-19 at 6.39.40 PM` |
 | World map card | `IMG_0524` (pins over the San Francisco Bay Area) |
