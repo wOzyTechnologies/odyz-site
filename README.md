@@ -6,7 +6,7 @@ step, no framework, no dependencies. Drop the folder on any static host and it w
 ```
 docs/
 ├── index.html              the whole landing page
-├── compare/index.html      Odyz vs Polarsteps, Been, Visited and Apple Photos
+├── compare/index.html      Odyz vs other travel tracker apps and Apple Photos
 ├── press/                  press kit: page, fact sheet, downloadable files and ZIP
 ├── privacy/index.html      legal shell — paste your real policy in
 ├── terms/index.html        legal shell — paste your real terms in
@@ -56,11 +56,11 @@ The privacy policy and terms live at `/privacy/` and `/terms/`; the old
 
 ## Comparison page
 
-`/compare/` compares Odyz with Polarsteps, Been, Visited and Apple's own Photos
-and Maps: a short "which should I use?" answer, a side-by-side table, one
-section per competitor, and an FAQ that is also in the page's structured data.
-The competitor facts come from each app's App Store listing, website and help
-pages as of October 2026. Re-check them every few months, then update the
+`/compare/` compares Odyz with other travel tracker apps (never named) and
+Apple Photos: a short "what's the best app?" answer, a three-column table that
+only lists features where Odyz comes out ahead, and an FAQ that is also in the
+page's structured data. The claims about other apps describe the popular travel
+trackers on the App Store as of October 2026. Re-check them every few months, then update the
 "Updated" date at the top of the page, `dateModified` in the structured data
 and the page's `lastmod` in `sitemap.xml`.
 
