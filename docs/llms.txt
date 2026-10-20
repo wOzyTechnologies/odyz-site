@@ -24,6 +24,7 @@
 ## Pages
 
 - [Odyz](https://www.odyz.app/): Product page with features, reviews and FAQ
+- [Odyz vs other travel tracker apps and Apple Photos](https://www.odyz.app/compare/): What Odyz does that other travel tracker apps and Apple Photos don't: automatic trips, routes and timeline from your photos, every city in the world, a multi-page digital passport and no account, as of October 2026
 - [Press kit](https://www.odyz.app/press/): Fact sheet, descriptions, screenshots, phone-in-hand renders, stamps, icon, logo and key art. Downloadable ZIP: https://www.odyz.app/press/odyz-press-kit.zip
 - [Fact sheet (plain text)](https://www.odyz.app/press/files/odyz-fact-sheet.txt)
 
