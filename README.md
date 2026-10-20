@@ -6,6 +6,7 @@ step, no framework, no dependencies. Drop the folder on any static host and it w
 ```
 docs/
 ├── index.html              the whole landing page
+├── compare/index.html      Odyz vs Polarsteps, Been, Visited and Apple Photos
 ├── press/                  press kit: page, fact sheet, downloadable files and ZIP
 ├── privacy/index.html      legal shell — paste your real policy in
 ├── terms/index.html        legal shell — paste your real terms in
@@ -52,6 +53,16 @@ odyz-site/
 
 The privacy policy and terms live at `/privacy/` and `/terms/`; the old
 `privacy.html` and `terms.html` addresses redirect there.
+
+## Comparison page
+
+`/compare/` compares Odyz with Polarsteps, Been, Visited and Apple's own Photos
+and Maps: a short "which should I use?" answer, a side-by-side table, one
+section per competitor, and an FAQ that is also in the page's structured data.
+The competitor facts come from each app's App Store listing, website and help
+pages as of October 2026. Re-check them every few months, then update the
+"Updated" date at the top of the page, `dateModified` in the structured data
+and the page's `lastmod` in `sitemap.xml`.
 
 ## Press kit
 

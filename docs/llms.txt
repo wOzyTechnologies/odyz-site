@@ -24,6 +24,7 @@
 ## Pages
 
 - [Odyz](https://www.odyz.app/): Product page with features, reviews and FAQ
+- [Odyz vs other travel tracker apps](https://www.odyz.app/compare/): How Odyz compares with Polarsteps, Been, Visited and Apple Photos and Maps, and which to use when, as of October 2026
 - [Press kit](https://www.odyz.app/press/): Fact sheet, descriptions, screenshots, phone-in-hand renders, stamps, icon, logo and key art. Downloadable ZIP: https://www.odyz.app/press/odyz-press-kit.zip
 - [Fact sheet (plain text)](https://www.odyz.app/press/files/odyz-fact-sheet.txt)
 
