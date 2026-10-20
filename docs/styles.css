@@ -246,13 +246,34 @@ em { font-style: normal; color: var(--accent); }
   mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
   -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
 }
-.hero-shelf .phone { flex: 0 0 auto; }
-.phone--sm { width: clamp(90px, 12vw, 178px); opacity: .55; }
-.phone--md { width: clamp(105px, 14vw, 205px); opacity: .8; }
-.phone--lg { width: clamp(125px, 16.5vw, 240px); }
-.hero-shelf .phone { z-index: 1; }
+.hero-shelf > .bezel { flex: 0 0 auto; z-index: 1; }
 
-/* Centre of the shelf: the World Trips screen in a phone bezel, with the
+/* Phone bezel with a Dynamic Island, sized by --s (the screen width).
+   Screenshots are 920 x 2000. */
+.bezel {
+  --b: calc(var(--s) * 0.045);
+  position: relative; padding: var(--b);
+  border-radius: calc(var(--s) * 0.19);
+  background: #050506;
+  box-shadow:
+    inset 0 0 0 calc(var(--s) * 0.008) #4a4a52,
+    inset 0 0 0 calc(var(--s) * 0.016) #141417,
+    0 0 0 1px rgba(0, 0, 0, .6),
+    0 30px 70px -20px rgba(0, 0, 0, .9);
+}
+.bezel img {
+  width: var(--s); aspect-ratio: 920 / 2000;
+  border-radius: calc(var(--s) * 0.15);
+}
+.bezel::after {
+  content: ""; position: absolute; left: 50%; top: calc(var(--b) + var(--s) * 0.035);
+  width: calc(var(--s) * 0.3); height: calc(var(--s) * 0.085);
+  transform: translateX(-50%); border-radius: 999px; background: #000;
+}
+.bezel--sm { --s: clamp(83px, 11vw, 163px); opacity: .55; }
+.bezel--md { --s: clamp(96px, 12.8vw, 188px); opacity: .8; }
+
+/* Centre of the shelf: the World Trips screen in a bezel, with the
    same map carrying on behind it to the left and right. The map image is
    three screenshots stitched together (the screen's own 920px in the middle,
    493px either side) and only covers the rows between the app's top and
@@ -277,27 +298,6 @@ em { font-style: normal; color: var(--accent); }
   mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent), linear-gradient(180deg, transparent, #000 20%, #000 80%, transparent);
   mask-composite: intersect;
 }
-.hero-feature-phone {
-  position: relative; padding: var(--b);
-  border-radius: calc(var(--s) * 0.19);
-  background: #050506;
-  box-shadow:
-    inset 0 0 0 calc(var(--s) * 0.008) #4a4a52,
-    inset 0 0 0 calc(var(--s) * 0.016) #141417,
-    0 0 0 1px rgba(0, 0, 0, .6),
-    0 30px 70px -20px rgba(0, 0, 0, .9);
-}
-.hero-feature-phone img {
-  width: var(--s); aspect-ratio: 920 / 2000;
-  border-radius: calc(var(--s) * 0.15);
-}
-/* Dynamic Island */
-.hero-feature-phone::after {
-  content: ""; position: absolute; left: 50%; top: calc(var(--b) + var(--s) * 0.035);
-  width: calc(var(--s) * 0.3); height: calc(var(--s) * 0.085);
-  transform: translateX(-50%); border-radius: 999px; background: #000;
-}
-
 /* Shared phone chrome */
 .phone {
   position: relative; border-radius: 12%/5.6%;

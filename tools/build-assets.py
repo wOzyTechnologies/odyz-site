@@ -93,10 +93,6 @@ def main():
     print("Screens ->")
     screens = {
         # hero shelf, left to right
-        "screens/hero-1.webp": "Content/IMG_0490.PNG",       # passport, dark
-        "screens/hero-2.webp": "Content/Timeline.jpeg",      # trip timeline, light
-        "screens/hero-4.webp": "Content/IMG_0492.PNG",       # landmarks visited
-        "screens/hero-5.webp": "Content/IMG_0494.PNG",       # glowing pins over Europe
         # feature cards
         "screens/passport-light-2.webp": "Content/Pass/IMG_1063.PNG",
         "screens/passport-dark-1.webp": "Content/Pass/IMG_1064.PNG",
