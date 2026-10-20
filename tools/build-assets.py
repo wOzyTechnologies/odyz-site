@@ -103,8 +103,8 @@ def main():
         "screens/passport-light-2.webp": "Content/Pass/IMG_1063.PNG",
         "screens/passport-dark-1.webp": "Content/Pass/IMG_1064.PNG",
         "screens/passport-dark-2.webp": "Content/IMG_0490.PNG",
-        "screens/timeline.webp": "Content/Timeline.jpeg",
-        "screens/worldmap.webp": "Content/IMG_0494.PNG",
+        "screens/timeline.webp": "Content/Screenshot 2026-10-19 at 6.39.40 PM.png",
+        "screens/worldmap.webp": "Content/IMG_0524.PNG",
         "screens/download.webp": "Content/IMG_0506.PNG",     # world trips globe
     }
     for rel, source in screens.items():
