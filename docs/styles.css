@@ -250,6 +250,22 @@ em { font-style: normal; color: var(--accent); }
 .phone--sm { width: clamp(90px, 12vw, 178px); opacity: .55; }
 .phone--md { width: clamp(105px, 14vw, 205px); opacity: .8; }
 .phone--lg { width: clamp(125px, 16.5vw, 240px); }
+.hero-shelf .phone { z-index: 1; }
+
+/* Centre of the shelf: a phone already framed on its starry map backdrop.
+   The phone fills the middle 70% of the image, so the image is sized to make
+   the phone ~1.4x a large shelf phone, and the backdrop tucks behind the
+   neighbours and fades out at the edges. */
+.hero-feature {
+  --w: clamp(180px, 24vw, 350px);
+  flex: 0 0 auto; position: relative; width: var(--w);
+  margin: 0 calc(var(--w) * -0.11) calc(var(--w) * -0.1);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(180deg, transparent, #000 8%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(180deg, transparent, #000 8%);
+  mask-composite: intersect;
+}
+.hero-feature img { width: 100%; }
 
 /* Shared phone chrome */
 .phone {

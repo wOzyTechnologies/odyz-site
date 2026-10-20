@@ -95,7 +95,6 @@ def main():
         # hero shelf, left to right
         "screens/hero-1.webp": "Content/IMG_0490.PNG",       # passport, dark
         "screens/hero-2.webp": "Content/Timeline.jpeg",      # trip timeline, light
-        "screens/hero-3.webp": "Content/IMG_1044.PNG",       # Eiffel Tower on the 3D map
         "screens/hero-4.webp": "Content/IMG_0492.PNG",       # landmarks visited
         "screens/hero-5.webp": "Content/IMG_0494.PNG",       # glowing pins over Europe
         # feature cards
