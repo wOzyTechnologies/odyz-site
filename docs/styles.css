@@ -548,29 +548,49 @@ em { font-style: normal; color: var(--accent); }
 /* ==========================================================================
    Footer
    ========================================================================== */
-.footer { background: var(--bg-deep); padding: clamp(50px, 7vw, 80px) 0 30px; }
-.footer-inner {
-  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
-  padding-bottom: 46px;
+/* Shared site footer, written into every page by tools/site-footer.py.
+   Same markup and styles as wozy.co's footer; Odyz sets its colors here. */
+footer.sf { --sf-bg: var(--bg-deep); --sf-line: var(--line); }
+footer.sf {
+  all: unset;
+  display: block;
+  box-sizing: border-box;
+  margin-top: 72px;
+  padding: clamp(44px, 6vw, 64px) 0 28px;
+  background: var(--sf-bg, transparent);
+  color: var(--sf-text, inherit);
+  border-top: 1px solid var(--sf-line, color-mix(in srgb, currentColor 15%, transparent));
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: left;
 }
-.footer-brand .nav-brand { font-size: 24px; margin-bottom: 14px; }
-.footer-brand p { color: var(--text-muted); font-size: 15px; max-width: 30ch; }
-.footer-col h4 { font-size: 14px; font-weight: 700; margin-bottom: 16px; }
-.footer-col a { display: inline-block; padding: 5px 0; font-size: 14px; color: var(--text-muted); transition: color .2s; }
-.footer-col a:hover { color: var(--accent); }
+.sf *, .sf *::before, .sf *::after { box-sizing: border-box; }
+.sf-in { max-width: var(--sf-max, 1120px); margin: 0 auto; padding: 0 24px; }
+.sf-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(4, minmax(0, 1fr)); gap: 36px 28px; }
 
-.footer-bottom {
-  display: flex; justify-content: space-between; align-items: center; gap: 20px;
-  border-top: 1px solid var(--line); padding-top: 24px;
-  font-size: 13px; color: var(--text-faint);
-}
-.footer-bottom ul { display: flex; gap: 22px; }
-.footer-bottom a:hover { color: var(--accent); }
+.sf-brand p { margin: 14px 0 0; max-width: 24ch; opacity: .72; font-size: 15px; }
+.sf a.sf-logo { display: inline-flex; align-items: center; gap: 10px; opacity: 1; font-weight: 800; font-size: 18px; text-decoration: none; }
+.sf-logo img { width: 36px; height: 36px; border-radius: 9px; display: block; }
 
-@media (max-width: 700px) {
-  .footer-inner { grid-template-columns: 1fr; gap: 30px; }
-  .footer-bottom { flex-direction: column; text-align: center; }
+.sf nav.sf-col { display: block; margin: 0; padding: 0; }
+.sf .sf-h { margin: 0 0 14px; padding: 0; font: inherit; font-size: 15px; font-weight: 800; letter-spacing: 0; line-height: 1.3; color: inherit; text-transform: none; }
+.sf ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; columns: auto; }
+.sf li { margin: 0; padding: 0; break-inside: avoid; }
+.sf li::before { content: none; }
+.sf a { color: inherit; opacity: .72; font-weight: 400; text-decoration: none; transition: opacity .15s; }
+.sf a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+.sf a:focus-visible { opacity: 1; outline: 2px solid currentColor; outline-offset: 3px; border-radius: 3px; }
+
+.sf-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--sf-line, color-mix(in srgb, currentColor 15%, transparent)); font-size: 13px; }
+.sf-bottom p { margin: 0; opacity: .7; }
+.sf-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.sf-bottom a { opacity: 1; }
+
+@media (max-width: 900px) {
+  .sf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sf-brand { grid-column: 1 / -1; }
 }
+.sf a:hover { color: var(--accent); }
 
 /* ==========================================================================
    Legal pages (privacy.html / terms.html)
@@ -691,3 +711,33 @@ em { font-style: normal; color: var(--accent); }
 .cmp-note { margin-top: 16px; font-size: 14px !important; color: var(--text-faint) !important; }
 
 .cmp .accordion { max-width: 860px; }
+
+/* ==========================================================================
+   Help center (/help/) — builds on the press-kit and compare layouts
+   ========================================================================== */
+.help-crumbs { margin: 4px 0 18px !important; font-size: 14px !important; color: var(--text-faint) !important; }
+.help-crumbs a { color: var(--text-muted); }
+.help-crumbs a:hover { color: var(--accent); }
+.help .pk-intro h1 { max-width: 20ch; }
+
+.help-step { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: clamp(28px, 5vw, 72px); align-items: center; padding: clamp(28px, 4vw, 44px) 0; border-top: 1px solid var(--line); }
+.help-step:first-of-type { border-top: 0; padding-top: 0; }
+.help-num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; margin-bottom: 14px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 15px; }
+.help-step h3 { font-size: clamp(21px, 2.2vw, 26px); font-weight: 700; letter-spacing: -0.4px; margin-bottom: 10px; }
+.help-step p { color: var(--text-muted); font-size: 16px; line-height: 1.75; max-width: 52ch; }
+.help-media .phone { width: min(260px, 78%); margin-inline: auto; }
+.help-media .tablet { width: 100%; }
+.help-media .help-hand { display: block; width: min(320px, 90%); height: auto; margin-inline: auto; }
+
+.help-list, .help-related { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.help-list li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 20px 24px; transition: border-color .2s; }
+.help-list li:hover { border-color: var(--accent); }
+.help-list a { display: block; font-size: 19px; font-weight: 700; letter-spacing: -0.3px; }
+.pk-section .help-list a { color: var(--text); }
+.help-list span { display: block; margin-top: 6px; color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+.help-related a { font-size: 17px; font-weight: 500; }
+
+@media (max-width: 760px) {
+  .help-step { grid-template-columns: 1fr; }
+  .help-step:first-of-type { padding-top: 0; }
+}
