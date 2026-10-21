@@ -28,7 +28,7 @@ SITE = "https://www.odyz.app"
 CSS = None
 
 # Pages that never get the footer.
-SKIP = {"404.html", "privacy.html", "terms.html"}
+SKIP = {"privacy.html", "terms.html"}
 
 BRAND = {
     "name": "Odyz",

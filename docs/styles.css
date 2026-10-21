@@ -565,6 +565,7 @@ footer.sf {
   text-align: left;
 }
 .sf *, .sf *::before, .sf *::after { box-sizing: border-box; }
+.sf p { margin: 0; max-width: none; font-size: inherit; line-height: inherit; color: inherit; }
 .sf-in { max-width: var(--sf-max, 1120px); margin: 0 auto; padding: 0 24px; }
 .sf-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(4, minmax(0, 1fr)); gap: 36px 28px; }
 
@@ -741,3 +742,11 @@ footer.sf {
   .help-step { grid-template-columns: 1fr; }
   .help-step:first-of-type { padding-top: 0; }
 }
+
+.help-step--wide { grid-template-columns: 1fr; }
+.passport-pages { list-style: none; margin: 6px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 34px 22px; }
+.passport-pages li { display: flex; flex-direction: column; gap: 6px; }
+.passport-pages .phone { width: 100%; margin-bottom: 10px; }
+.passport-pages b { font-size: 16px; font-weight: 700; }
+.passport-pages span { color: var(--text-muted); font-size: 14px; line-height: 1.55; }
+@media (max-width: 900px) { .passport-pages { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
