@@ -28,6 +28,15 @@
 - [Press kit](https://www.odyz.app/press/): Fact sheet, descriptions, screenshots, phone-in-hand renders, stamps, icon, logo and key art. Downloadable ZIP: https://www.odyz.app/press/odyz-press-kit.zip
 - [Fact sheet (plain text)](https://www.odyz.app/press/files/odyz-fact-sheet.txt)
 
+## Help
+
+- [Odyz help center](https://www.odyz.app/help/): Answers to common questions, step by step with screenshots
+- [How do I track my trips?](https://www.odyz.app/help/track-trips/): Odyz builds trips automatically from the location and date in your photos, including trips from years ago
+- [How do I see my travel stats?](https://www.odyz.app/help/travel-stats/): The digital passport: continents, countries, cities, share of the world explored, trips, days traveling, photos and distance, for all time or any year
+- [How do I know how many countries I've visited?](https://www.odyz.app/help/how-many-countries/): Odyz counts every country in your photos; covers all 193 UN countries plus territories
+- [How do I see which countries I've visited?](https://www.odyz.app/help/which-countries/): The World Trips map and a list of visited countries by continent
+- [How do I see which cities I've visited?](https://www.odyz.app/help/which-cities/): The timeline, the pin map, the 3D city tour and the passport's city count
+
 ## Press coverage
 
 - "Odyz Turns Your Travel Photos Into A Visual Passport To Enjoy", Brent Dirks, App Advice

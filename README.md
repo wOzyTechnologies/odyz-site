@@ -7,6 +7,7 @@ step, no framework, no dependencies. Drop the folder on any static host and it w
 docs/
 ├── index.html              the whole landing page
 ├── compare/index.html      Odyz vs other travel tracker apps and Apple Photos
+├── help/                   help center: one page per question, plus the index
 ├── press/                  press kit: page, fact sheet, downloadable files and ZIP
 ├── privacy/index.html      legal shell — paste your real policy in
 ├── terms/index.html        legal shell — paste your real terms in
@@ -53,6 +54,31 @@ odyz-site/
 
 The privacy policy and terms live at `/privacy/` and `/terms/`; the old
 `privacy.html` and `terms.html` addresses redirect there.
+
+## Footer
+
+Every page has the same footer, written by `tools/site-footer.py` between
+`<!-- site-footer -->` and `<!-- /site-footer -->`. The columns are set at
+the top of the script. The Help and Compare columns list every page that has
+a `<meta name="footer-label">` tag, in `footer-order`, so a new help page shows
+up in every footer on its own. Run it after adding or renaming a page:
+
+```bash
+python3 tools/site-footer.py
+```
+
+It also fills the question list on `/help/`, keeps the year current and warns
+about pages missing from `sitemap.xml`. A GitHub check runs it with `--check`
+and fails if any page is out of date. The footer's styles are in `styles.css`
+under "Shared site footer"; wozy.co uses the same script and styles.
+
+## Help center
+
+`/help/` has one page per question people ask, each with a short answer,
+steps with screenshots, an FAQ (also in the page's structured data) and
+links to the other questions. To add one, copy a page in `help/`, change its
+`footer-label` and `footer-order`, add it to `sitemap.xml` and run the footer
+script.
 
 ## Comparison page
 
