@@ -32,7 +32,7 @@ SKIP = {"privacy.html", "terms.html"}
 # A column is (heading, links). A link is (label, href). "AUTO:help" and
 # "AUTO:compare" expand to the section's pages with a footer-label under
 # /help/ or /compare/, in footer-order. Columns with no links are left out.
-APPS = ("wOzy apps", [
+APPS = ("Apps", [
     ("Animal Loop", "https://www.wozy.co/animal-loop/"),
     ("TicToe Fury", "https://www.wozy.co/tictoefury/"),
     ("Odyz", "/"),
@@ -48,6 +48,7 @@ SECTIONS = [
         "brand": ("Odyz", "/", "/assets/logo-stamp.png",
                   "Your trips, map and digital passport, built from the photos on your phone."),
         "columns": [
+            APPS,
             ("Odyz", [
                 ("Features", "/#features"),
                 ("Reviews", "/#testimonials"),
@@ -57,7 +58,6 @@ SECTIONS = [
             ]),
             ("Help", ["AUTO:help", ("Contact support", "https://www.wozy.co/contact/?app=odyz")]),
             ("Compare", ["AUTO:compare"]),
-            APPS,
         ],
         "bottom": [("Privacy Policy", "/privacy/"), ("Terms & Conditions", "/terms/"), ("X", "https://x.com/odyzapp")],
     },
