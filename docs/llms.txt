@@ -30,7 +30,6 @@
 
 ## Help
 
-- [Odyz help center](https://www.odyz.app/help/): Answers to common questions, step by step with screenshots
 - [How do I track my trips?](https://www.odyz.app/help/track-trips/): Odyz builds trips automatically from the location and date in your photos, including trips from years ago
 - [How do I see my travel stats?](https://www.odyz.app/help/travel-stats/): The digital passport: continents, countries, cities, share of the world explored, trips, days traveling, photos and distance, for all time or any year
 - [How do I know how many countries I've visited?](https://www.odyz.app/help/how-many-countries/): Odyz counts every country in your photos; covers all 193 UN countries plus territories

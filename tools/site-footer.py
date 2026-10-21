@@ -55,7 +55,7 @@ SECTIONS = [
                 ("Press kit", "/press/"),
                 ("Download on the App Store", "https://apps.apple.com/us/app/odyz/id6736624376"),
             ]),
-            ("Help", ["AUTO:help", ("All questions", "/help/"), ("Contact support", "https://www.wozy.co/contact/?app=odyz")]),
+            ("Help", ["AUTO:help", ("Contact support", "https://www.wozy.co/contact/?app=odyz")]),
             ("Compare", ["AUTO:compare"]),
             APPS,
         ],
@@ -190,7 +190,9 @@ def main():
             if not check:
                 p.write_text(new, encoding="utf-8")
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
-    missing = [url_for(p) for p in pages() if p.name == "index.html" and SITE + url_for(p) not in sitemap]
+    missing = [url_for(p) for p in pages()
+               if p.name == "index.html" and SITE + url_for(p) not in sitemap
+               and 'http-equiv="refresh"' not in p.read_text(encoding="utf-8")]
     for m in missing:
         print(f"warning: {m} is not in sitemap.xml", file=sys.stderr)
     if check:
